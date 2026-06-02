@@ -88,8 +88,8 @@ export function Gnb({ modeValue, onModeValueChange, modeAriaLabel }: GnbProps) {
       >
         <div className="mx-auto flex h-[63px] max-w-[1200px] items-center justify-between px-6">
           <a className="flex items-center gap-2" href="#">
-            <img alt="거부기린" className="size-6" src={Logo} />
-            <img alt="" className="h-[15px] w-auto" src={TextLogo} />
+            <img alt="거부기린" className="gbgr-logo-mark size-6" src={Logo} />
+            <img alt="" className="gbgr-logo-type h-[15px] w-auto" src={TextLogo} />
           </a>
 
           <nav className="hidden items-center gap-3 text-[15px] font-medium text-[#7e7e7b] md:flex">
@@ -137,8 +137,8 @@ export function Gnb({ modeValue, onModeValueChange, modeAriaLabel }: GnbProps) {
       >
         <div className="mx-auto flex h-[63px] max-w-[800px] items-center justify-between px-4">
           <a className="flex items-center gap-2" href="#">
-            <img alt="거부기린" className="size-6" src={Logo} />
-            <img alt="" className="h-[15px] w-auto" src={TextLogo} />
+            <img alt="거부기린" className="gbgr-logo-mark size-6" src={Logo} />
+            <img alt="" className="gbgr-logo-type h-[15px] w-auto" src={TextLogo} />
           </a>
           <div className="flex items-center gap-3">
             <LangToggle />
@@ -168,8 +168,8 @@ export function Gnb({ modeValue, onModeValueChange, modeAriaLabel }: GnbProps) {
       >
         <div className="mx-auto flex h-[63px] min-w-[320px] items-center justify-between px-4">
           <a className="flex items-center gap-2" href="#">
-            <img alt="거부기린" className="size-6" src={Logo} />
-            <img alt="" className="h-[15px] w-auto" src={TextLogo} />
+            <img alt="거부기린" className="gbgr-logo-mark size-6" src={Logo} />
+            <img alt="" className="gbgr-logo-type h-[15px] w-auto" src={TextLogo} />
           </a>
           <div className="flex items-center gap-3">
             <LangToggle />
@@ -217,8 +217,8 @@ export function Gnb({ modeValue, onModeValueChange, modeAriaLabel }: GnbProps) {
               <div className="flex w-full flex-col gap-8">
                 <div className="flex w-full items-center justify-between pt-1">
                   <a className="flex items-center gap-2" href="#">
-                    <img alt="거부기린" className="size-6" src={Logo} />
-                    <img alt="" className="h-[15px] w-auto" src={TextLogo} />
+                    <img alt="거부기린" className="gbgr-logo-mark size-6" src={Logo} />
+                    <img alt="" className="gbgr-logo-type h-[15px] w-auto" src={TextLogo} />
                   </a>
                   <button
                     aria-label={t("gnb.closeMenu")}

@@ -32,11 +32,11 @@ export function Cta() {
 
         <div className="relative flex flex-col items-center gap-[60px] px-6 text-center">
           <div className="flex flex-col items-center gap-[10px]">
-            <div className="text-[32px] font-bold leading-[1.2] text-[#212121] sm:text-[40px] sm:leading-[1.6]">
+            <div className="gbgr-cta-heading text-[32px] font-bold leading-[1.2] text-[#212121] sm:text-[40px] sm:leading-[1.6]">
               <span className="block">{t("cta.title1")}</span>
               <span className="block">{t("cta.title2")}</span>
             </div>
-            <div className="text-[18px] font-semibold leading-[1.6] text-[#6a6966] sm:text-[20px]">
+            <div className="gbgr-cta-subtitle text-[18px] font-semibold leading-[1.6] text-[#6a6966] sm:text-[20px]">
               {t("cta.subtitle")}
             </div>
           </div>
@@ -68,11 +68,11 @@ export function Cta() {
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="relative flex w-full flex-col items-center gap-[30px] px-4 text-center">
             <div className="flex flex-col items-center gap-[10px]">
-              <div className="text-[22px] font-bold leading-[1.5] text-[#212121]">
+              <div className="gbgr-cta-heading text-[22px] font-bold leading-[1.5] text-[#212121]">
                 <div>{t("cta.title1")}</div>
                 <div>{t("cta.title2")}</div>
               </div>
-              <div className="text-[14px] font-medium leading-[1.5] text-[#6a6966]">
+              <div className="gbgr-cta-subtitle text-[14px] font-medium leading-[1.5] text-[#6a6966]">
                 {t("cta.subtitle")}
               </div>
             </div>
@@ -103,11 +103,11 @@ export function Cta() {
 
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="relative flex w-full flex-col items-center px-4 text-center">
-            <div className="text-[22px] font-bold leading-[1.5] text-[#212121]">
+            <div className="gbgr-cta-heading text-[22px] font-bold leading-[1.5] text-[#212121]">
               <div>{t("cta.title1")}</div>
               <div>{t("cta.title2")}</div>
             </div>
-            <div className="mt-[10px] text-[14px] font-medium leading-[1.5] text-[#6a6966]">
+            <div className="gbgr-cta-subtitle mt-[10px] text-[14px] font-medium leading-[1.5] text-[#6a6966]">
               {t("cta.subtitle")}
             </div>
           </div>
