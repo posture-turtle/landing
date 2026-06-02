@@ -42,6 +42,8 @@ function Keypoint({
             "w-full max-w-[800px] rounded-[16px] shadow-[0_0_15px_rgba(128,113,82,0.14)]",
             imageClassName ?? "",
           ].join(" ")}
+          decoding="async"
+          loading="lazy"
           src={imageSrc}
         />
       </div>
@@ -123,6 +125,8 @@ export function KeypointsSection() {
                 <img
                   alt=""
                   className="w-[361px] max-w-full shadow-[0_0_15px_rgba(128,113,82,0.14)]"
+                  decoding="async"
+                  loading="lazy"
                   src={assets.keypoints.kp4Notif}
                 />
               </div>
@@ -139,11 +143,15 @@ export function KeypointsSection() {
               <img
                 alt=""
                 className="w-[276px] max-w-full shadow-[0_0_15px_rgba(128,113,82,0.14)]"
+                decoding="async"
+                loading="lazy"
                 src={assets.keypoints.kp5Min}
               />
               <img
                 alt="Keypoint 5"
                 className="w-[275px] max-w-full shadow-[0_0_15px_rgba(128,113,82,0.14)]"
+                decoding="async"
+                loading="lazy"
                 src={assets.keypoints.kp5Med}
               />
             </div>
@@ -174,6 +182,8 @@ export function KeypointsSection() {
             <img
               alt="Keypoint 1"
               className="w-full rounded-[16px] shadow-[0_0_15px_rgba(128,113,82,0.14)]"
+              decoding="async"
+              loading="lazy"
               src={assets.keypoints.tabletKp1}
             />
             <div className="flex flex-col gap-3">
@@ -195,6 +205,8 @@ export function KeypointsSection() {
             <img
               alt="Keypoint 2"
               className="w-full"
+              decoding="async"
+              loading="lazy"
               src={assets.keypoints.tabletKp2}
             />
             <div className="flex flex-col gap-3">
@@ -216,6 +228,8 @@ export function KeypointsSection() {
             <img
               alt="Keypoint 3"
               className="w-full rounded-[16px] shadow-[0_0_15px_rgba(128,113,82,0.14)]"
+              decoding="async"
+              loading="lazy"
               src={assets.keypoints.tabletKp3}
             />
             <div className="flex flex-col gap-3">
@@ -238,6 +252,8 @@ export function KeypointsSection() {
             <img
               alt="Keypoint 4"
               className="w-full rounded-[16px] shadow-[0_0_15px_rgba(128,113,82,0.14)]"
+              decoding="async"
+              loading="lazy"
               src={assets.keypoints.tabletKp4}
             />
             <div className="flex flex-col gap-3">
@@ -255,6 +271,8 @@ export function KeypointsSection() {
                 <img
                   alt=""
                   className="w-full max-w-[360px] shadow-[0_0_15px_rgba(128,113,82,0.14)]"
+                  decoding="async"
+                  loading="lazy"
                   src={assets.keypoints.tabletKp4Notif}
                 />
               </div>
@@ -266,11 +284,15 @@ export function KeypointsSection() {
               <img
                 alt=""
                 className="absolute left-0 top-0 w-[361px] max-w-full shadow-[0_0_15px_rgba(128,113,82,0.14)]"
+                decoding="async"
+                loading="lazy"
                 src={assets.keypoints.tabletKp5Min}
               />
               <img
                 alt="Keypoint 5"
                 className="absolute bottom-0 left-0 w-[353px] max-w-full shadow-[0_0_15px_rgba(128,113,82,0.14)]"
+                decoding="async"
+                loading="lazy"
                 src={assets.keypoints.tabletKp5Med}
               />
             </div>
@@ -299,6 +321,8 @@ export function KeypointsSection() {
             <img
               alt="Keypoint 1"
               className="w-full rounded-[16px] shadow-[0_0_15px_rgba(128,113,82,0.14)]"
+              decoding="async"
+              loading="lazy"
               src={assets.keypoints.mobileKp1}
             />
             <div className="flex flex-col gap-3">
@@ -320,6 +344,8 @@ export function KeypointsSection() {
             <img
               alt="Keypoint 2"
               className="w-full"
+              decoding="async"
+              loading="lazy"
               src={assets.keypoints.mobileKp2}
             />
             <div className="flex flex-col gap-3">
@@ -341,6 +367,8 @@ export function KeypointsSection() {
             <img
               alt="Keypoint 3"
               className="w-full rounded-[16px] shadow-[0_0_15px_rgba(128,113,82,0.14)]"
+              decoding="async"
+              loading="lazy"
               src={assets.keypoints.mobileKp3}
             />
             <div className="flex flex-col gap-3">
@@ -363,6 +391,8 @@ export function KeypointsSection() {
             <img
               alt="Keypoint 4"
               className="w-full rounded-[16px] shadow-[0_0_15px_rgba(128,113,82,0.14)]"
+              decoding="async"
+              loading="lazy"
               src={assets.keypoints.mobileKp4}
             />
             <div className="flex flex-col gap-3">
@@ -380,6 +410,8 @@ export function KeypointsSection() {
                 <img
                   alt=""
                   className="w-full max-w-[144px] shadow-[0_0_15px_rgba(128,113,82,0.14)]"
+                  decoding="async"
+                  loading="lazy"
                   src={assets.keypoints.mobileKp4Notif}
                 />
               </div>
@@ -391,11 +423,15 @@ export function KeypointsSection() {
               <img
                 alt=""
                 className="absolute top-0 w-[144px] shadow-[0_0_15px_rgba(128,113,82,0.14)]"
+                decoding="async"
+                loading="lazy"
                 src={assets.keypoints.mobileKp5Min}
               />
               <img
                 alt="Keypoint 5"
                 className="absolute top-[49px] w-[144px] shadow-[0_0_15px_rgba(128,113,82,0.14)]"
+                decoding="async"
+                loading="lazy"
                 src={assets.keypoints.mobileKp5Med}
               />
             </div>

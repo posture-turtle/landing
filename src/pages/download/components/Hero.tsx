@@ -304,7 +304,11 @@ export function Hero() {
           <img
             alt={t("hero.altServiceScreen")}
             className="w-full drop-shadow-[0_18px_36px_rgba(0,0,0,0.22)]"
+            decoding="async"
+            fetchPriority="high"
+            height={1054}
             src={assets.hero.mock}
+            width={1600}
           />
         </div>
       </section>
@@ -349,7 +353,11 @@ export function Hero() {
             <img
               alt={t("hero.altServiceScreen")}
               className="w-full drop-shadow-[0_18px_36px_rgba(0,0,0,0.22)]"
+              decoding="async"
+              fetchPriority="high"
+              height={659}
               src={assets.hero.tabletMock}
+              width={1000}
             />
           </div>
         </div>
@@ -395,7 +403,11 @@ export function Hero() {
             <img
               alt={t("hero.altServiceScreen")}
               className="w-full drop-shadow-[0_18px_36px_rgba(0,0,0,0.22)]"
+              decoding="async"
+              fetchPriority="high"
+              height={474}
               src={assets.hero.mobileMock}
+              width={720}
             />
           </div>
         </div>

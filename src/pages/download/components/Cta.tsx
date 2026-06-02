@@ -25,7 +25,11 @@ export function Cta() {
         <img
           alt=""
           className="absolute inset-0 h-full w-full object-cover"
+          decoding="async"
+          height={1153}
+          loading="lazy"
           src={assets.cta.bg}
+          width={1600}
         />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(255,255,255,0.85),rgba(255,255,255,0)_55%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-10%,rgba(255,255,255,0.8),rgba(255,255,255,0)_60%)]" />
@@ -60,7 +64,11 @@ export function Cta() {
         <img
           alt=""
           className="absolute inset-0 h-full w-full object-cover"
+          decoding="async"
+          height={649}
+          loading="lazy"
           src={assets.cta.tabletBg}
+          width={900}
         />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_10%,rgba(255,255,255,0.95),rgba(255,255,255,0)_55%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-10%,rgba(255,255,255,0.9),rgba(255,255,255,0)_60%)]" />
@@ -96,7 +104,11 @@ export function Cta() {
         <img
           alt=""
           className="absolute inset-0 h-full w-full object-cover"
+          decoding="async"
+          height={461}
+          loading="lazy"
           src={assets.cta.mobileBg}
+          width={640}
         />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_10%,rgba(255,255,255,0.95),rgba(255,255,255,0)_55%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-10%,rgba(255,255,255,0.9),rgba(255,255,255,0)_60%)]" />
