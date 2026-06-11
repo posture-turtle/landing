@@ -14,55 +14,74 @@ type DownloadLinks = {
   releasePage: string;
 };
 
-const fallbackReleaseTag = "v0.1.3";
-const fallbackReleaseBase = `https://github.com/kusitms-bugi/FE/releases/download/${fallbackReleaseTag}`;
+const releaseBaseUrl =
+  (import.meta.env.VITE_RELEASE_BASE_URL as string | undefined)?.replace(/\/+$/, "") ??
+  "https://releases.bugi.co.kr";
+const latestReleaseManifestUrl =
+  (import.meta.env.VITE_RELEASE_MANIFEST_URL as string | undefined) ??
+  `${releaseBaseUrl}/latest.json`;
+const fallbackReleaseVersion = "0.1.23";
+const fallbackReleasePrefix = `v${fallbackReleaseVersion}`;
 
 const fallbackDownloadLinks: DownloadLinks = {
-  macArm64Dmg: `${fallbackReleaseBase}/bugi-0.1.3-arm64.dmg`,
-  macX64Dmg: `${fallbackReleaseBase}/bugi-0.1.3-x64.dmg`,
-  windowsExe: `${fallbackReleaseBase}/GBGR-Setup-0.1.3.exe`,
-  releasePage: `https://github.com/kusitms-bugi/FE/releases/tag/${fallbackReleaseTag}`,
+  macArm64Dmg: `${releaseBaseUrl}/${fallbackReleasePrefix}/${encodeURIComponent("거부기린_0.1.23_aarch64.dmg")}`,
+  macX64Dmg: `${releaseBaseUrl}/${fallbackReleasePrefix}/${encodeURIComponent("거부기린_0.1.23_x64.dmg")}`,
+  windowsExe: `${releaseBaseUrl}/${fallbackReleasePrefix}/${encodeURIComponent("거부기린_0.1.23_x64-setup.exe")}`,
+  releasePage: `${releaseBaseUrl}/${fallbackReleasePrefix}/latest.json`,
 };
 
-type GithubReleaseResponse = {
-  html_url?: string;
-  assets?: Array<{
-    name?: string;
-    browser_download_url?: string;
-  }>;
+type TauriReleaseManifest = {
+  version?: string;
+  platforms?: Record<
+    string,
+    {
+      url?: string;
+    }
+  >;
 };
 
-function pickAssetUrl(
-  assets: GithubReleaseResponse["assets"],
-  predicate: (name: string) => boolean,
-) {
-  for (const asset of assets ?? []) {
-    const name = asset.name ?? "";
-    const url = asset.browser_download_url ?? "";
-    if (!name || !url) continue;
-    if (predicate(name)) return url;
+function getPlatformUrl(manifest: TauriReleaseManifest, ...keys: string[]) {
+  for (const key of keys) {
+    const url = manifest.platforms?.[key]?.url;
+    if (url) return url;
   }
   return null;
 }
 
+function replaceFileName(url: string, fileName: string) {
+  const parsed = new URL(url);
+  const segments = parsed.pathname.split("/");
+  segments[segments.length - 1] = encodeURIComponent(fileName);
+  parsed.pathname = segments.join("/");
+  return parsed.toString();
+}
+
+function getMacDmgUrl(updaterUrl: string, version: string, arch: "aarch64" | "x64") {
+  const parsed = new URL(updaterUrl);
+  const updaterFileName = decodeURIComponent(parsed.pathname.split("/").pop() ?? "");
+  const appName = updaterFileName
+    .replace(/_(aarch64|x64)\.app\.tar\.gz$/i, "")
+    .replace(/\.app\.tar\.gz$/i, "");
+
+  return replaceFileName(updaterUrl, `${appName}_${version}_${arch}.dmg`);
+}
+
 async function resolveLatestDownloadLinks(): Promise<DownloadLinks> {
-  const endpoint = "https://api.github.com/repos/kusitms-bugi/FE/releases/latest";
-  const response = await fetch(endpoint, { headers: { Accept: "application/vnd.github+json" } });
+  const response = await fetch(latestReleaseManifestUrl, {
+    headers: { Accept: "application/json" },
+  });
   if (!response.ok) throw new Error(`Failed to fetch latest release: ${response.status}`);
-  const data = (await response.json()) as GithubReleaseResponse;
+  const data = (await response.json()) as TauriReleaseManifest;
+  const version = data.version ?? fallbackReleaseVersion;
 
-  const macArm64Dmg =
-    pickAssetUrl(data.assets, (name) => /arm64\.dmg$/i.test(name)) ??
-    pickAssetUrl(data.assets, (name) => /arm64.*\.dmg$/i.test(name));
+  const macArm64UpdaterUrl = getPlatformUrl(data, "darwin-aarch64", "darwin-aarch64-app");
+  const macX64UpdaterUrl = getPlatformUrl(data, "darwin-x86_64", "darwin-x86_64-app");
+  const windowsExe = getPlatformUrl(data, "windows-x86_64-nsis", "windows-x86_64");
 
-  const macX64Dmg =
-    pickAssetUrl(data.assets, (name) => /x64\.dmg$/i.test(name)) ??
-    pickAssetUrl(data.assets, (name) => /x64.*\.dmg$/i.test(name)) ??
-    pickAssetUrl(data.assets, (name) => /intel.*\.dmg$/i.test(name));
-
-  const windowsExe =
-    pickAssetUrl(data.assets, (name) => /setup.*\.exe$/i.test(name)) ??
-    pickAssetUrl(data.assets, (name) => /\.exe$/i.test(name));
+  const macArm64Dmg = macArm64UpdaterUrl
+    ? getMacDmgUrl(macArm64UpdaterUrl, version, "aarch64")
+    : null;
+  const macX64Dmg = macX64UpdaterUrl ? getMacDmgUrl(macX64UpdaterUrl, version, "x64") : null;
 
   if (!macArm64Dmg || !macX64Dmg || !windowsExe) {
     throw new Error("Latest release assets missing expected files");
@@ -72,7 +91,7 @@ async function resolveLatestDownloadLinks(): Promise<DownloadLinks> {
     macArm64Dmg,
     macX64Dmg,
     windowsExe,
-    releasePage: data.html_url || "https://github.com/kusitms-bugi/FE/releases/latest",
+    releasePage: `${releaseBaseUrl}/v${version}/latest.json`,
   };
 }
 
