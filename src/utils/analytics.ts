@@ -1,14 +1,8 @@
-// Google Analytics 4 Event Tracking Utility
+import posthog from "posthog-js";
 
-declare global {
-  interface Window {
-    gtag?: (command: string, targetId: string, config?: Record<string, unknown>) => void;
-  }
-}
+export type AnalyticsEventCategory = "download" | "cta" | "faq" | "scroll";
 
-export type GaEventCategory = 'download' | 'cta' | 'faq' | 'scroll';
-
-export type GaEventAction =
+export type AnalyticsEventAction =
   | 'download_click'
   | 'download_email_submit'
   | 'download_email_success'
@@ -18,25 +12,46 @@ export type GaEventAction =
   | 'faq_close'
   | 'scroll_reach_cta';
 
-export interface GaEventOptions {
-  category: GaEventCategory;
-  action: GaEventAction;
+export interface AnalyticsEventOptions {
+  category: AnalyticsEventCategory;
+  action: AnalyticsEventAction;
   label?: string;
   value?: number;
 }
 
-/**
- * Track an event to Google Analytics 4
- */
-export function trackEvent({ category, action, label, value }: GaEventOptions): void {
-  if (typeof window === 'undefined' || !window.gtag) {
+const posthogKey = import.meta.env.VITE_POSTHOG_KEY as string | undefined;
+const posthogHost =
+  (import.meta.env.VITE_POSTHOG_HOST as string | undefined)?.trim() ||
+  "https://us.i.posthog.com";
+
+let isAnalyticsInitialized = false;
+
+export function initAnalytics(): void {
+  if (isAnalyticsInitialized || typeof window === "undefined" || !posthogKey) {
     return;
   }
 
-  window.gtag('event', action, {
-    event_category: category,
-    event_label: label,
-    value: value,
+  posthog.init(posthogKey, {
+    api_host: posthogHost,
+    capture_pageview: true,
+  });
+
+  isAnalyticsInitialized = true;
+}
+
+export function trackEvent({ category, action, label, value }: AnalyticsEventOptions): void {
+  if (!isAnalyticsInitialized) {
+    initAnalytics();
+  }
+
+  if (!isAnalyticsInitialized) {
+    return;
+  }
+
+  posthog.capture(action, {
+    category,
+    label,
+    value,
   });
 }
 

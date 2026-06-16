@@ -5,6 +5,9 @@ import "./i18n";
 import "./gbgr-ui.css";
 import "./index.css";
 import App from "./App.tsx";
+import { initAnalytics } from "./utils/analytics";
+
+initAnalytics();
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
