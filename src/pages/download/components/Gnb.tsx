@@ -44,10 +44,10 @@ export function Gnb({ modeValue, onModeValueChange, modeAriaLabel }: GnbProps) {
   ] as const;
 
   const navLinks: Record<string, { href: string; external?: boolean }> = {
-    blog: { href: "https://blog.bugi.co.kr/", external: true },
+    blog: { href: "https://blog.postureturtle.com/", external: true },
   };
 
-  const trialHref = "http://demo.bugi.co.kr/";
+  const trialHref = "https://demo.postureturtle.com/";
   const [isDrawerVisible, setIsDrawerVisible] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 

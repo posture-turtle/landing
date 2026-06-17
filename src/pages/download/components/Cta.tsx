@@ -7,7 +7,7 @@ import { trackCtaClick } from "../../../utils/analytics";
 
 export function Cta() {
   const { t } = useTranslation();
-  const trialHref = "http://demo.bugi.co.kr/";
+  const trialHref = "https://demo.postureturtle.com/";
 
   const handleTrialClick = useCallback(() => {
     trackCtaClick('trial');
