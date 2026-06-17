@@ -33,7 +33,13 @@ export function initAnalytics(): void {
 
   posthog.init(posthogKey, {
     api_host: posthogHost,
+    autocapture: true,
     capture_pageview: true,
+    enable_heatmaps: true,
+    session_recording: {
+      maskAllInputs: true,
+      maskTextSelector: "",
+    },
   });
 
   isAnalyticsInitialized = true;
@@ -101,7 +107,7 @@ export function trackCtaClick(type: 'trial'): void {
 export function trackFaqInteraction(questionIndex: number, isOpen: boolean): void {
   // Validate question index range (project has 7 FAQ items: 0-6)
   if (questionIndex < 0 || questionIndex > 6) {
-    console.warn(`[GA4] Invalid FAQ index: ${questionIndex}. Must be between 0 and 6.`);
+    console.warn(`[Analytics] Invalid FAQ index: ${questionIndex}. Must be between 0 and 6.`);
     return;
   }
 
