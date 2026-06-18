@@ -13,8 +13,9 @@ i18n
       ko: { translation: ko },
       en: { translation: en },
     },
-    fallbackLng: "ko",
+    fallbackLng: "en",
     supportedLngs: ["ko", "en"],
+    nonExplicitSupportedLngs: true,
     interpolation: {
       escapeValue: false,
     },
@@ -24,5 +25,10 @@ i18n
       caches: ["localStorage"],
     },
   });
+
+i18n.on("languageChanged", (language) => {
+  if (typeof document === "undefined") return;
+  document.documentElement.lang = language.startsWith("ko") ? "ko" : "en";
+});
 
 export default i18n;
