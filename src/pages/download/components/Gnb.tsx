@@ -6,8 +6,10 @@ import { useTranslation } from "react-i18next";
 
 import { assets } from "../assets";
 import { responsive } from "../responsive";
-import Logo from "../../../assets/Logo_Image.png";
-import TextLogo from "../../../assets/Text_Image.png";
+import DarkLogoEn from "../../../assets/logo-dark-en.svg";
+import DarkLogoKo from "../../../assets/logo-dark-ko.svg";
+import LightLogoEn from "../../../assets/logo-light-en.svg";
+import LightLogoKo from "../../../assets/logo-light-ko.svg";
 
 type GnbProps = {
   modeValue: ModeToggleValue;
@@ -31,6 +33,27 @@ function LangToggle() {
     >
       {isKo ? "EN" : "KO"}
     </button>
+  );
+}
+
+function BrandLogo({ modeValue }: { modeValue: ModeToggleValue }) {
+  const { i18n } = useTranslation();
+  const isKo = i18n.language.startsWith("ko");
+  const logoSrc =
+    modeValue === "dark"
+      ? isKo
+        ? DarkLogoKo
+        : DarkLogoEn
+      : isKo
+        ? LightLogoKo
+        : LightLogoEn;
+
+  return (
+    <img
+      alt={isKo ? "거부기린" : "Geoboogirin"}
+      className="h-6 w-auto"
+      src={logoSrc}
+    />
   );
 }
 
@@ -87,9 +110,8 @@ export function Gnb({ modeValue, onModeValueChange, modeAriaLabel }: GnbProps) {
         ].join(" ")}
       >
         <div className="mx-auto flex h-[63px] max-w-[1200px] items-center justify-between px-6">
-          <a className="flex items-center gap-2" href="#">
-            <img alt="거부기린" className="gbgr-logo-mark size-6" src={Logo} />
-            <img alt="" className="gbgr-logo-type h-[15px] w-auto" src={TextLogo} />
+          <a className="flex items-center" href="#">
+            <BrandLogo modeValue={modeValue} />
           </a>
 
           <nav className="hidden items-center gap-3 text-[15px] font-medium text-[#7e7e7b] md:flex">
@@ -136,9 +158,8 @@ export function Gnb({ modeValue, onModeValueChange, modeAriaLabel }: GnbProps) {
         ].join(" ")}
       >
         <div className="mx-auto flex h-[63px] max-w-[800px] items-center justify-between px-4">
-          <a className="flex items-center gap-2" href="#">
-            <img alt="거부기린" className="gbgr-logo-mark size-6" src={Logo} />
-            <img alt="" className="gbgr-logo-type h-[15px] w-auto" src={TextLogo} />
+          <a className="flex items-center" href="#">
+            <BrandLogo modeValue={modeValue} />
           </a>
           <div className="flex items-center gap-3">
             <LangToggle />
@@ -167,9 +188,8 @@ export function Gnb({ modeValue, onModeValueChange, modeAriaLabel }: GnbProps) {
         ].join(" ")}
       >
         <div className="mx-auto flex h-[63px] min-w-[320px] items-center justify-between px-4">
-          <a className="flex items-center gap-2" href="#">
-            <img alt="거부기린" className="gbgr-logo-mark size-6" src={Logo} />
-            <img alt="" className="gbgr-logo-type h-[15px] w-auto" src={TextLogo} />
+          <a className="flex items-center" href="#">
+            <BrandLogo modeValue={modeValue} />
           </a>
           <div className="flex items-center gap-3">
             <LangToggle />
@@ -216,9 +236,8 @@ export function Gnb({ modeValue, onModeValueChange, modeAriaLabel }: GnbProps) {
             <div className="flex h-full flex-col items-start justify-between">
               <div className="flex w-full flex-col gap-8">
                 <div className="flex w-full items-center justify-between pt-1">
-                  <a className="flex items-center gap-2" href="#">
-                    <img alt="거부기린" className="gbgr-logo-mark size-6" src={Logo} />
-                    <img alt="" className="gbgr-logo-type h-[15px] w-auto" src={TextLogo} />
+                  <a className="flex items-center" href="#">
+                    <BrandLogo modeValue={modeValue} />
                   </a>
                   <button
                     aria-label={t("gnb.closeMenu")}

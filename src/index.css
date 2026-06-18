@@ -82,10 +82,6 @@
   color: var(--gbgr-page-text-subtle) !important;
 }
 
-:root[data-theme="dark"] .gbgr-logo-type {
-  filter: brightness(0) invert(1);
-}
-
 :root[data-theme="dark"] .gbgr-cta-heading {
   color: #212121 !important;
 }
