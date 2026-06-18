@@ -50,7 +50,7 @@ function BrandLogo({ modeValue }: { modeValue: ModeToggleValue }) {
 
   return (
     <img
-      alt={isKo ? "거부기린" : "Geoboogirin"}
+      alt={isKo ? "거부기린" : "Posture Turtle"}
       className="h-6 w-auto"
       src={logoSrc}
     />

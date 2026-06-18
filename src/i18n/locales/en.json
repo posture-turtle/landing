@@ -4,18 +4,18 @@
     "update": "Updates",
     "pricing": "Pricing",
     "blog": "Blog",
-    "runApp": "Launch Geoboogirin",
+    "runApp": "Launch Posture Turtle",
     "openMenu": "Open menu",
     "closeMenu": "Close menu"
   },
   "hero": {
-    "title": "Download Geoboogirin",
+    "title": "Download Posture Turtle",
     "subtitle1": "Real-time forward head posture measurement and feedback",
     "subtitle2": "Instantly detect and correct your posture changes.",
     "macDownload": "Download for macOS",
     "windowsDownload": "Download for Windows",
     "intelDownload": "Download for Intel-based macOS",
-    "pcOnly1": "Geoboogirin is only available on PC.",
+    "pcOnly1": "Posture Turtle is only available on PC.",
     "pcOnly2": "Enter your email and we'll send you a link and notification.",
     "emailPlaceholder": "geoboogirin@gmail.com",
     "emailSend": "Send Email",
@@ -23,12 +23,12 @@
     "emailInvalid": "Please check your email format.",
     "emailSent": "Download link has been sent to your email.",
     "emailError": "Failed to send. Please try again later.",
-    "altServiceScreen": "Geoboogirin service screen"
+    "altServiceScreen": "Posture Turtle service screen"
   },
   "why": {
     "title1": "Why do we keep becoming turtles",
     "title2": "even when we know better?",
-    "desc": "No time or budget for hospital visits, yet you feel your body deteriorating the more you ignore it. For busy PC power users who sit for long hours in modern society — Geoboogirin is the service for you!"
+    "desc": "No time or budget for hospital visits, yet you feel your body deteriorating the more you ignore it. For busy PC power users who sit for long hours in modern society — Posture Turtle is the service for you!"
   },
   "keypoints": {
     "kp1": {
@@ -89,47 +89,47 @@
     "title": "Frequently Asked Questions",
     "q1": {
       "question": "I'm concerned about security and privacy with webcam usage. Is it safe?",
-      "answer": "Geoboogirin prioritizes user privacy above all. All video analysis is processed 100% on-device, meaning it stays on your PC. Recorded footage is never sent to external servers and is discarded immediately after analysis, so you can use it with peace of mind."
+      "answer": "Posture Turtle prioritizes user privacy above all. All video analysis is processed 100% on-device, meaning it stays on your PC. Recorded footage is never sent to external servers and is discarded immediately after analysis, so you can use it with peace of mind."
     },
     "q2": {
       "question": "Can I use it without a webcam?",
-      "answer": "No, Geoboogirin uses a webcam to analyze your real-time posture in 3D, so a camera device is essential. Unfortunately, if your PC doesn't have a connected camera, you won't be able to use the service at this time."
+      "answer": "No, Posture Turtle uses a webcam to analyze your real-time posture in 3D, so a camera device is essential. Unfortunately, if your PC doesn't have a connected camera, you won't be able to use the service at this time."
     },
     "q3": {
       "question": "Does it work well regardless of laptop or desktop specs?",
-      "answer": "Geoboogirin is optimized to run on low resources, so it works smoothly on standard office laptops and desktops. As long as you have a standard webcam, you can use the 3D posture analysis feature right away without additional equipment."
+      "answer": "Posture Turtle is optimized to run on low resources, so it works smoothly on standard office laptops and desktops. As long as you have a standard webcam, you can use the 3D posture analysis feature right away without additional equipment."
     },
     "q4": {
       "question": "I use dual monitors. Does it matter which one I look at?",
-      "answer": "Geoboogirin is designed to analyze posture based on the front-facing webcam. For the most accurate measurements, we recommend placing the webcam directly in front of you. If you're looking at a monitor from the side, it may detect poor posture, so please place the camera at the top center of your main monitor."
+      "answer": "Posture Turtle is designed to analyze posture based on the front-facing webcam. For the most accurate measurements, we recommend placing the webcam directly in front of you. If you're looking at a monitor from the side, it may detect poor posture, so please place the camera at the top center of your main monitor."
     },
     "q5": {
       "question": "Can I use it on a tablet or smartphone?",
-      "answer": "Currently, Geoboogirin is only available on PC. We're considering mobile support in the future."
+      "answer": "Currently, Posture Turtle is only available on PC. We're considering mobile support in the future."
     },
     "q6": {
       "question": "What should I do when I step away briefly?",
-      "answer": "When stepping away briefly, you can pause Geoboogirin or cover your webcam. If you'll be away for a long time, we recommend closing the app."
+      "answer": "When stepping away briefly, you can pause Posture Turtle or cover your webcam. If you'll be away for a long time, we recommend closing the app."
     },
     "q7": {
-      "question": "What if my posture doesn't improve or the pain persists despite using Geoboogirin?",
-      "answer": "If pain persists or symptoms worsen, we recommend consulting a medical professional. Geoboogirin is a service that helps build posture correction habits and does not replace medical diagnosis."
+      "question": "What if my posture doesn't improve or the pain persists despite using Posture Turtle?",
+      "answer": "If pain persists or symptoms worsen, we recommend consulting a medical professional. Posture Turtle is a service that helps build posture correction habits and does not replace medical diagnosis."
     }
   },
   "cta": {
     "title1": "Until every forward head posture",
     "title2": "becomes a giraffe",
-    "subtitle": "Curious about Geoboogirin?",
+    "subtitle": "Curious about Posture Turtle?",
     "button": "Try it without downloading"
   },
   "footer": {
-    "companyName": "Geoboogirin",
+    "companyName": "Posture Turtle",
     "ceo": "CEO: Yunha Kim",
     "contactEmail": "Contact: gbgr32@gmail.com",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
-    "instagramAlt": "Geoboogirin Instagram",
-    "copyright": "© 2026 Geoboogirin. All rights reserved."
+    "instagramAlt": "Posture Turtle Instagram",
+    "copyright": "© 2026 Posture Turtle. All rights reserved."
   },
   "common": {
     "darkMode": "Dark Mode",
